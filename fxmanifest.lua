@@ -1,8 +1,8 @@
 fx_version 'cerulean'
 game 'gta5'
 
-description 'QB-Printer'
-version '1.2.0'
+description 'QB-Printer enhanced by Xergxes7'
+version '2.0.0'
 
 ui_page 'html/index.html'
 
