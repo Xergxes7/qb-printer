@@ -54,7 +54,8 @@ Printer.Start = function(data) {
 
 Printer.Save = function(data) {
     $.post('https://qb-printer/SaveDocument', JSON.stringify({
-        url: $('.printer-input').val()
+        url: $('.printer-input').val(),
+        name:  $('.printer-input-name').val()
     }));
 }
 
