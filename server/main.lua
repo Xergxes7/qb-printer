@@ -17,15 +17,16 @@ QBCore.Commands.Add("spawnprinter", Lang:t('command.spawn_printer'), {}, true, f
 	TriggerClientEvent('qb-printer:client:SpawnPrinter', source)
 end, "admin")
 
-RegisterNetEvent('qb-printer:server:SaveDocument', function(url)
+RegisterNetEvent('qb-printer:server:SaveDocument', function(url,name)
     local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     local info = {}
     local extension = string.sub(url, -4)
     local validexts = ValidExtensions
-    if url ~= nil then
+    if url ~= nil and name ~= nil then
         if validexts[extension] then
             info.url = url
+            info.name = name
             Player.Functions.AddItem('printerdocument', 1, nil, info)
             TriggerClientEvent('inventory:client:ItemBox', src, QBCore.Shared.Items['printerdocument'], "add")
         else
